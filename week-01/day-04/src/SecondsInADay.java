@@ -4,7 +4,7 @@ public class SecondsInADay {
     int currentMinutes = 34;
     int currentSeconds = 42;
 
-    int remainingSeconds = (24 - currentHours - 1) * 360 + (60 - currentMinutes - 1) * 60 + (60 - currentSeconds);
+    int remainingSeconds = (24 - currentHours - 1) * 60 * 60 + (60 - currentMinutes - 1) * 60 + (60 - currentSeconds);
 
     System.out.println(remainingSeconds);
   }
