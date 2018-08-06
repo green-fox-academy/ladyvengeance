@@ -1,5 +1,3 @@
-import java.util.function.Function;
-
 public class Doubling {
   public static void main(String[] args) {
     int baseNum = 123;
