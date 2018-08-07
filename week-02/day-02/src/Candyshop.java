@@ -9,7 +9,6 @@ public class Candyshop{
     arrayList.add(false);
 
     System.out.println(sweets(arrayList));
-
   }
   public static ArrayList<Object> sweets(ArrayList<Object> input) {
     for (int i = 0; i < input.size(); i++) {
