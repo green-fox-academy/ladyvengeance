@@ -13,6 +13,6 @@ public class AppendLetter{
     for (int i = 0; i < input.size(); i++) {
       input.set(i, input.get(i).concat("a"));
     }
-    return input
+    return input;
   }
 }
