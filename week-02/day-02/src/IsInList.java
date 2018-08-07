@@ -11,8 +11,6 @@ public class IsInList{
   }
   public static boolean checkNums(ArrayList<Integer> input) {
     ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(4, 8, 12, 16));
-    boolean contall = input.containsAll(list2);
-    return contall;
-
+    return input.containsAll(list2);
   }
 }
