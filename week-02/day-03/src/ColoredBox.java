@@ -2,13 +2,18 @@ import javax.swing.*;
 import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LineInTheMiddle {
-  public static void mainDraw(Graphics graphics){
-
+public class ColoredBox {
+  public static void mainDraw(Graphics graphics) {
+    
     graphics.setColor(Color.RED);
-    graphics.drawLine(0, 172, 320, 172);
+    graphics.drawLine(10, 10, 10, 60);
     graphics.setColor(Color.GREEN);
-    graphics.drawLine(160, 0, 160, 343);
+    graphics.drawLine(10, 60, 60, 60);
+    graphics.setColor(Color.BLUE);
+    graphics.drawLine(60, 60, 60, 10);
+    graphics.setColor(Color.MAGENTA);
+    graphics.drawLine(60, 10, 10, 10);
+
   }
 
   // Don't touch the code below
