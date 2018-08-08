@@ -4,16 +4,12 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class HorizontalLines {
   public static void mainDraw(Graphics graphics) {
-    // Create a line drawing function that takes 2 parameters:
-    // The x and y coordinates of the line's starting point
-    // and draws a 50 long horizontal line from that point.
-    // Draw 3 lines with that function. Use loop for that.
+
     for (int i = 1; i < 4; i++) {
       drawHorizontal(30, i * 20, graphics);
     }
-
-
   }
+
   public static void drawHorizontal (int x, int y, Graphics graphics) {
     graphics.drawLine(x, y, x + 50, y);
   }
