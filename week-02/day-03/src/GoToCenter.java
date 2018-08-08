@@ -1,14 +1,20 @@
+import com.sun.corba.se.impl.orbutil.graph.Graph;
+
 import javax.swing.*;
 import java.awt.*;
+
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LineInTheMiddle {
-  public static void mainDraw(Graphics graphics){
+public class GoToCenter {
+  public static void mainDraw(Graphics graphics) {
 
-    graphics.setColor(Color.RED);
-    graphics.drawLine(0, HEIGHT / 2, 320, HEIGHT / 2);
-    graphics.setColor(Color.GREEN);
-    graphics.drawLine(WIDTH / 2, 0, WIDTH / 2, 343);
+    for (int i = 1; i < 4; i++) {
+      drawToCenter(10, i * 30, graphics);
+    }
+  }
+
+  public static void drawToCenter(int x, int y, Graphics graphics) {
+    graphics.drawLine(x, y, WIDTH / 2, HEIGHT / 2);
   }
 
   // Don't touch the code below
