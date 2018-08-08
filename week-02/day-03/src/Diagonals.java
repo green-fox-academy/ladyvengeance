@@ -2,17 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class ColoredBox {
+public class Diagonals {
   public static void mainDraw(Graphics graphics) {
 
-    graphics.setColor(Color.RED);
-    graphics.drawLine(10, 10, 10, 60);
     graphics.setColor(Color.GREEN);
-    graphics.drawLine(10, 60, 60, 60);
-    graphics.setColor(Color.BLUE);
-    graphics.drawLine(60, 60, 60, 10);
-    graphics.setColor(Color.MAGENTA);
-    graphics.drawLine(60, 10, 10, 10);
+    graphics.drawLine(0, 0, 320, 343);
+    graphics.setColor(Color.RED);
+    graphics.drawLine(320, 0, 0, 343);
   }
 
   // Don't touch the code below
