@@ -3,7 +3,6 @@ import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class PositionSquare {
-
   public static void mainDraw(Graphics graphics){
 
     int max = 220;

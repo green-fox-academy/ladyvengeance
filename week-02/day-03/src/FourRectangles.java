@@ -11,14 +11,23 @@ public class FourRectangles {
     int width = 20;
     int height = 30;
 
+    int x1 = (int)(Math.random() * ((max-min) + 1)) + min;
+    int y1 = (int)(Math.random() * ((max-min) + 1)) + min;
+    int x2 = (int)(Math.random() * ((max-min) + 1)) + min;
+    int y2 = (int)(Math.random() * ((max-min) + 1)) + min;
+    int x3 = (int)(Math.random() * ((max-min) + 1)) + min;
+    int y3 = (int)(Math.random() * ((max-min) + 1)) + min;
+    int x4 = (int)(Math.random() * ((max-min) + 1)) + min;
+    int y4 = (int)(Math.random() * ((max-min) + 1)) + min;
+
     graphics.setColor(Color.RED);
-    graphics.drawRect((int)(Math.random() * ((max-min) + 1)) + min, (int)(Math.random() * ((max-min) + 1)) + min, width, height);
+    graphics.drawRect(x1, y1, width, height);
     graphics.setColor(Color.GREEN);
-    graphics.drawRect((int)(Math.random() * ((max-min) + 1)) + min, (int)(Math.random() * ((max-min) + 1)) + min, width, height);
+    graphics.drawRect(x2, y2, width, height);
     graphics.setColor(Color.BLUE);
-    graphics.drawRect((int)(Math.random() * ((max-min) + 1)) + min, (int)(Math.random() * ((max-min) + 1)) + min, width, height);
+    graphics.drawRect(x3, y3, width, height);
     graphics.setColor(Color.MAGENTA);
-    graphics.drawRect((int)(Math.random() * ((max-min) + 1)) + min, (int)(Math.random() * ((max-min) + 1)) + min, width, height);
+    graphics.drawRect(x4, y4, width, height);
   }
 
   //    Don't touch the code below
