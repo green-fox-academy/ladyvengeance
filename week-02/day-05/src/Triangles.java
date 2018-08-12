@@ -5,6 +5,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Triangles {
   public static void mainDraw(Graphics graphics) {
 
+/*
     graphics.drawRect(0, 0, WIDTH, HEIGHT);
 
     int c = (int)(Math.sqrt((WIDTH / 2) * (WIDTH / 2) + HEIGHT * HEIGHT));
@@ -26,25 +27,49 @@ public class Triangles {
     graphics.drawLine(50, HEIGHT, WIDTH / 2 + 50, 0);
     graphics.drawLine(WIDTH / 2, 0, WIDTH, HEIGHT);
     graphics.drawLine(0, HEIGHT, WIDTH, HEIGHT);
+*/
 
-
-//    drawLeft(0, graphics);
+    int x = 10;
+    drawLeft(x, graphics);
+    drawRight(x, graphics);
   }
 
   public static void drawLeft (int a, Graphics graphics) {
+    int SIDE = (int) (Math.sqrt((WIDTH / 2) * (WIDTH / 2) + HEIGHT * HEIGHT));
+    int numOfLines = WIDTH / a;
+    int incr = SIDE / numOfLines;
+    int temp1 = a;
+    int temp2 = incr;
 
-    for (int i = 0; i < WIDTH; i++) {
-      if (i == 0) {
-        graphics.drawLine(a, HEIGHT, WIDTH / 2, a);
-      } else {
-        graphics.drawLine(a, HEIGHT, WIDTH / 2 + a, a);
-      }
-      a += 10;
+    graphics.drawLine(0, HEIGHT, WIDTH / 2, 0);
+    graphics.drawLine(WIDTH / 2, 0, WIDTH, HEIGHT);
+    graphics.drawLine(0, HEIGHT, WIDTH, HEIGHT);
+
+    for (int i = 1; i < numOfLines; i++) {
+      graphics.drawLine(a, HEIGHT, WIDTH / 2 + a / 2, (int) (Math.sqrt(incr * incr - (a / 2) * (a / 2))));
+      a += temp1;
+      incr += temp2;
+    }
+}
+
+  public static void drawRight (int a, Graphics graphics) {
+    int SIDE = (int) (Math.sqrt((WIDTH / 2) * (WIDTH / 2) + HEIGHT * HEIGHT));
+    int numOfLines = WIDTH / a;
+    int incr = SIDE / numOfLines;
+    int temp1 = a;
+    int temp2 = incr;
+
+    graphics.drawLine(WIDTH / 2, 0, WIDTH, HEIGHT);
+
+    for (int i = numOfLines; i > 1; i--) {
+      graphics.drawLine(WIDTH / 2 - a, (int) (Math.sqrt(incr * incr - (a / 2) * (a / 2))), WIDTH - a, 0 );
+      a += temp1;
+      incr += temp2;
     }
   }
 
-  public static void drawRight (int b, Graphics graphics) {
-    graphics.drawLine(0, b, b, WIDTH);
+  public static void drawCentre (int a, Graphics graphics){
+    graphics.drawLine(0, HEIGHT, WIDTH, HEIGHT);
   }
 
   //    Don't touch the code below

@@ -1,6 +1,6 @@
 public class DiagonalMatrix {
   public static void main(String[] args) {
-    int[][] num = {
+  /*  int[][] num = {
         {0},
         {1}
     };
@@ -18,5 +18,5 @@ public class DiagonalMatrix {
       }
       System.out.println();
     }
-  }
+  */}
 }

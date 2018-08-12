@@ -5,15 +5,15 @@ import java.util.*;
 
 public class Calculator {
   public static void main(String... args) {
-    Scanner scanner = new Scanner(System.in);
+   /* Scanner scanner = new Scanner(System.in);
 
     System.out.println("Please type in the operation type and two whole numbers. Use spaces to separate the elements.");
-
-    String userinput = scanner.next();
+*/
+   /* String userinput = scanner.next();
 
     List<String> userinList = new ArrayList<String>(Arrays.asList(userinput.split(" "));
 
-    System.out.println(calculate(userinList));
+    System.out.println(calculate(userinList));*/
 
     // Create a simple calculator application which reads the parameters from the prompt
     // and prints the result to the prompt.
@@ -32,9 +32,9 @@ public class Calculator {
     // Print the result to the prompt
     // Exit
   }
-  public static String calculate(ArrayList<String> input) {
+ /* public static String calculate(ArrayList<String> input) {
     if (input.[0] == +) {
       input[1]+input[2];
     } else if (input[0] == -)
-  }
+  }*/
 }
