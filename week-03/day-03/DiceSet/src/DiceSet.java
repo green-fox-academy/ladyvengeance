@@ -32,7 +32,7 @@ public class DiceSet {
   }
 
   public static void main(String[] args) {
-    DiceSet diceSet = new Dice();
+    DiceSet diceSet = new DiceSet();
     diceSet.getCurrent();
     diceSet.roll();
     diceSet.getCurrent();
@@ -41,5 +41,9 @@ public class DiceSet {
     diceSet.getCurrent();
     diceSet.reroll(4);
     diceSet.getCurrent();
+
+    System.out.println(diceSet.roll()[0]);
+    System.out.println(diceSet.getCurrent(5));
+
   }
 }
