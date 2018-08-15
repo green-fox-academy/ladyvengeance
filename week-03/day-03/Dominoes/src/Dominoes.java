@@ -28,7 +28,6 @@ public class Dominoes {
   static List<Domino> initializeDominoes() {
     List<Domino> dominoes = new ArrayList<>();
     dominoes.add(new Domino(5, 2));
-    System.out.println(dominoes.get(0).getValues()[1]);
     dominoes.add(new Domino(4, 6));
     dominoes.add(new Domino(1, 5));
     dominoes.add(new Domino(6, 7));
