@@ -4,11 +4,11 @@ public class StringsAgain {
     System.out.println(stringsNoX("All the x'es have been removed from this sentence."));
   }
   public static String stringsNoX (String input) {
-    boolean noX = input.contains("x");
-    if (noX == false) {
+    if (input.length() == 0) {
       return input;
     } else {
-      return input.trim("x");
+      String prefix = input.startsWith("x") ? "" : input.substring(0, 1);
+      return prefix + stringsNoX(input.substring(1));
     }
   }
 }

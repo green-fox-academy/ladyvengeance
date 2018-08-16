@@ -8,7 +8,6 @@ public class Strings {
     System.out.println(stringsXToY("There is xxxx and one y in this sentence.", from, to));
   }
   public static String stringsXToY (String input, char from, char to) {
-
     if (input.length() == 0) {
       return input;
     } else {
