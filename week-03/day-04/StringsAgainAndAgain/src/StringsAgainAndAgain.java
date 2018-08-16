@@ -10,7 +10,7 @@ public class StringsAgainAndAgain {
       return input;
     } else {
       String fromSecond = input.substring(1);
-      return input.substring(0,1) + "*" + stringsAndStars(fromSecond);
+      return input.charAt(0) + "*" + stringsAndStars(fromSecond);
     }
   }
 }
