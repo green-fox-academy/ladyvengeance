@@ -5,7 +5,7 @@ public class BunniesAgain {
     // have 3 ears, because they each have a raised foot. Recursively return the
     // number of "ears" in the bunny line 1, 2, ... n (without loops or multiplication).
 
-    System.out.println(bunzEarz(10));
+    System.out.println(bunzEarz(9));
   }
   public static int bunzEarz (int a) {
     int sum1 = 0;
@@ -14,11 +14,11 @@ public class BunniesAgain {
     if (a == 1) {
       return 2;
     } else if (a == 2) {
-      return 5;
+      sum1 = 5;
     } else if (a % 2 == 0) {
-      sum1 += sum1 + 2 + bunzEarz( a - 2);
+      sum1 += 3 + bunzEarz( a - 1);
     } else if (a % 2 == 1) {
-      sum2 += sum2 + 3 + bunzEarz(a - 2);
+      sum2 += 2 + bunzEarz(a - 1);
     }
     return sum1 + sum2;
   }
