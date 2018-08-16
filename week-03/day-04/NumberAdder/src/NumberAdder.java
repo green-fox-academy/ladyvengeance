@@ -7,7 +7,7 @@ public class NumberAdder {
     if (a == 1) {
       return 1;
     } else {
-      return (addNum(a-1) + a);
+      return addNum(a-1) + a;
     }
   }
 }

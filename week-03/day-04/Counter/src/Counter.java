@@ -8,7 +8,7 @@ public class Counter {
       return 1;
     } else {
       System.out.print(a + " ");
-      return (countFromNum(a-1));
+      return countFromNum(a-1);
     }
   }
 }
