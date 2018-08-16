@@ -44,6 +44,5 @@ public class DiceSet {
 
     System.out.println(diceSet.roll()[0]);
     System.out.println(diceSet.getCurrent(5));
-
   }
 }
