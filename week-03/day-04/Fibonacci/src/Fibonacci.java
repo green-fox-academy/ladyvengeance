@@ -8,6 +8,13 @@ public class Fibonacci {
     // fibonacci number, with n=0 representing the start of the sequence.
 
     System.out.println(fibonacci(7));
+
+    // SUM of Fibonacci sequence until nth element:
+    int temp = 0;
+    for (int i = 0; i < 8; i++) {
+      temp = temp + fibonacci(i);
+    }
+    System.out.println(temp);
   }
 
   public static int fibonacci (int n) {
