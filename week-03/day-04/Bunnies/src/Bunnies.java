@@ -9,7 +9,7 @@ public class Bunnies {
     if (a == 1) {
       return 2;
     } else {
-      return 1 + 1 + bunnyEars(a - 1);
+      return 2 + bunnyEars(a - 1);
     }
   }
 }
