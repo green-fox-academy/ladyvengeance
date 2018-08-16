@@ -8,7 +8,7 @@ public class StringsAgain {
     if (noX == false) {
       return input;
     } else {
-      return input.;
+      return input.trim("x");
     }
   }
 }
