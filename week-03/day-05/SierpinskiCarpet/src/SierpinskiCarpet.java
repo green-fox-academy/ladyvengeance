@@ -15,7 +15,7 @@ public class SierpinskiCarpet {
     graphics.drawRect(0, 0, WIDTH, HEIGHT);
     drawCarpet(a, b, size, graphics);
   }
-  
+
   public static void drawCarpet(int x, int y, int size, Graphics graphics) {
     drawSquare(x, y, size, graphics);
     if (size > 10) {
