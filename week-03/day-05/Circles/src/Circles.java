@@ -4,34 +4,28 @@ import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class SierpinskiCarpet {
+public class Circles {
 
   public static void mainDraw(Graphics graphics) {
-    int a = WIDTH / 3;
-    int b = HEIGHT / 3;
-    int size = WIDTH / 3;
+    int a = 0;
+    int b = 0;
+    int size = WIDTH;
 
     Random random = new Random();
     graphics.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
-    graphics.drawRect(0, 0, WIDTH, HEIGHT);
 
-    drawCarpet(a, b, size, graphics);
+    drawCircles(a, b, size, graphics);
   }
 
-  public static void drawCarpet(int x, int y, int size, Graphics graphics) {
+  public static void drawCircles(int x, int y, int size, Graphics graphics) {
     Random random = new Random();
     graphics.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
-    graphics.fillRect(x, y, size, size);
+    graphics.drawOval(x, y, size, size);
 
-    if (size > 10) {
-      drawCarpet(x - size * 2 / 3, y + size / 3, size / 3, graphics);
-      drawCarpet(x + size + size / 3, y + size / 3, size / 3, graphics);
-      drawCarpet(x + size / 3, y - size * 2 / 3, size / 3, graphics);
-      drawCarpet(x + size / 3, y + size + size / 3, size / 3, graphics);
-      drawCarpet(x - size * 2 / 3, y - size * 2 / 3, size / 3, graphics);
-      drawCarpet(x - size * 2 / 3, y + size + size / 3, size / 3, graphics);
-      drawCarpet(x + size + size / 3, y - size * 2 / 3, size / 3, graphics);
-      drawCarpet(x + size + size / 3, y + size + size / 3, size / 3, graphics);
+    if (size > 20) {
+      drawCircles(x + size / 4, y, size / 2, graphics);
+      drawCircles(x ,y + size / 3, size / 2, graphics);
+      drawCircles(x + size / 2, y + size / 3, size / 2, graphics);
     }
   }
 
