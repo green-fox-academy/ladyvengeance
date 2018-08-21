@@ -20,7 +20,6 @@ public class Plant {
   }
 
   public void waterPlant(int amountOfWater) {
-    System.out.println("Watering with " + amountOfWater);
   }
 
   @Override
