@@ -3,6 +3,11 @@ import java.util.ArrayList;
 public class Garden {
   ArrayList<Plant> plants = new ArrayList<>();
 
+  plants.add(flower01);
+    plants.add(flower02);
+    plants.add(tree01);
+    plants.add(tree02);
+
   public void checkStatus() {
     for (int i = 0; i < plants.size(); i++) {
       if (plants.get(i) instanceof Flower && plants.get(i).needsWater() == true) {
