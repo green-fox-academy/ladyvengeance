@@ -19,4 +19,8 @@ public class Aircraft {
     this.type = type;
     return type.toString();
   }
+
+  public String getStatus (String type, int ammo, int baseDamage, int damage) {
+    return "Type " + type + ", Ammo: " + ammo + ", Base Damage: " + baseDamage + ", All Damage: " + damage;
+  }
 }
