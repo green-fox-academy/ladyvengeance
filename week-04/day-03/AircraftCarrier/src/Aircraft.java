@@ -23,4 +23,8 @@ public class Aircraft {
   public String getStatus (String type, int ammo, int baseDamage, int damage) {
     return "Type " + type + ", Ammo: " + ammo + ", Base Damage: " + baseDamage + ", All Damage: " + damage;
   }
+
+  public boolean isPriority (F35 name) {
+    return true;
+  }
 }
