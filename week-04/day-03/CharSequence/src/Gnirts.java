@@ -1,6 +1,10 @@
 public class Gnirts implements CharSequence {
   private String input;
 
+  public Gnirts(String input) {
+    this.input = input;
+  }
+
   @Override
   public int length() {
     return input.length();
@@ -14,9 +18,5 @@ public class Gnirts implements CharSequence {
   @Override
   public CharSequence subSequence(int start, int end) {
     return null;
-  }
-
-  public Gnirts(String input) {
-    this.input = input;
   }
 }
