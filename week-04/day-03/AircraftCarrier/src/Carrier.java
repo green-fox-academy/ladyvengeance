@@ -9,4 +9,18 @@ public class Carrier {
     this.storeOfAmmo = storeOfAmmo;
     this.healthPoint = healthPoint;
   }
+
+  public void add(Aircraft name) {
+    mother.add(name);
+  }
+
+  public void fill() {
+    for (Aircraft aircraft : ArrayList<Aircraft> mother) {
+     storeOfAmmo - ammo
+    }
+  }
+
+  public void fight(Carrier carrier) {
+    healthPoint = mother.
+  }
 }
