@@ -14,5 +14,18 @@ public class Main {
 
     Collections.sort(dominoes);
     System.out.println(dominoes);
+
+    List<Thing> things = new ArrayList<>();
+    things.add(new Thing("thing1"));
+    things.add(new Thing("thing2"));
+    things.add(new Thing("thing3"));
+    things.add(new Thing("thing4"));
+    things.add(new Thing("thing5"));
+    things.add(new Thing("thing6"));
+    things.add(new Thing("thing7"));
+    things.add(new Thing("thing8"));
+
+    Collections.sort(things);
+    System.out.println(things);
   }
 }
