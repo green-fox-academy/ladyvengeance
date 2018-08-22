@@ -15,12 +15,22 @@ public class Carrier {
   }
 
   public void fill() {
-    for (Aircraft aircraft : ArrayList<Aircraft> mother) {
+    for (Aircraft aircraft : mother) {
      storeOfAmmo - ammo
     }
   }
 
   public void fight(Carrier carrier) {
-    healthPoint = mother.
+    int damage = ;
+    return damage;healthPoint = mother.
+  }
+
+  public String getStatus (String type, int ammo, int baseDamage, int damage) {
+    String status = "HP: " + healthPoint + ", Aircraft count: " + mother.size() + ", Ammo Storage: " + storeOfAmmo + ", Total damage: " + damage + "\nAircrafts:\n";
+    for (Aircraft aircraft : mother) {
+      status += aircraft.getStatus(type, ammo, baseDamage, damage);
+    }
+
+    return status;
   }
 }
