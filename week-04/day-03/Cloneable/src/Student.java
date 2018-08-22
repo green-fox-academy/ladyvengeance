@@ -10,6 +10,9 @@ public class Student implements Cloneable {
   }
 
   public Student(String name, int age, String gender, String previousOrganization) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
     this.previousOrganization = previousOrganization;
   }
 
