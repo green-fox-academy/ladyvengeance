@@ -22,15 +22,16 @@ public class Carrier {
 
   public void fight(Carrier carrier) {
     int damage = ;
+    for (Aircraft aircraft : mother) {
+      aircraft.getAmmo()++;
+    }
     return damage;healthPoint = mother.
   }
 
-  public String getStatus (String type, int ammo, int baseDamage, int damage) {
-    String status = "HP: " + healthPoint + ", Aircraft count: " + mother.size() + ", Ammo Storage: " + storeOfAmmo + ", Total damage: " + damage + "\nAircrafts:\n";
+  public void getStatus (String type, int ammo, int baseDamage, int damage) {
+    System.out.println("HP: " + healthPoint + ", Aircraft count: " + mother.size() + ", Ammo Storage: " + storeOfAmmo + ", Total damage: " + damage + "\nAircrafts:\n");
     for (Aircraft aircraft : mother) {
-      status += aircraft.getStatus(type, ammo, baseDamage, damage);
+      System.out.println(aircraft.getStatus(type, ammo, baseDamage, damage));
     }
-
-    return status;
   }
 }

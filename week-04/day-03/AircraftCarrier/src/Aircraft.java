@@ -15,16 +15,20 @@ public class Aircraft {
     return extraAmmo;
   }
 
-  public String getType (String type) {
+  public String getType(String type) {
     this.type = type;
     return type.toString();
   }
 
-  public String getStatus (String type, int ammo, int baseDamage, int damage) {
+  public String getStatus(String type, int ammo, int baseDamage, int damage) {
     return "Type " + type + ", Ammo: " + ammo + ", Base Damage: " + baseDamage + ", All Damage: " + damage;
   }
 
-  public boolean isPriority (F35 name) {
+  public boolean isPriority(F35 name) {
     return true;
+  }
+
+  public int getAmmo(String type) {
+    return ammo;
   }
 }
