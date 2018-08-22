@@ -1,5 +1,5 @@
 public class Gnirts implements CharSequence {
-  String input;
+  private String input;
 
   @Override
   public int length() {
