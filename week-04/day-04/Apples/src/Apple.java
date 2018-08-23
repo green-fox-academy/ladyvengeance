@@ -5,4 +5,9 @@ public class Apple {
     this.apple = apple;
     return apple;
   }
+
+  public String printApple() {
+    System.out.println(apple);
+    return apple;
+  }
 }
