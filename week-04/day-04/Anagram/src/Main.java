@@ -7,7 +7,6 @@ public class Main {
     String string2 = "reserve";
 
     System.out.println(isAnagram(string1, string2));
-
   }
 
   public static boolean isAnagram(String input1, String input2) {
