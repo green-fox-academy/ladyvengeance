@@ -10,10 +10,7 @@ public class Main {
   }
 
   public static boolean isAnagram(String input1, String input2) {
-    int n1 = input1.length();
-    int n2 = input2.length();
-
-    if (n1 != n2)
+    if (input1.length() != input2.length())
       return false;
 
     input1.toLowerCase();
