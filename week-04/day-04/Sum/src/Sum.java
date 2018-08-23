@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Main {
+public class Sum {
   public static void main(String[] args) {
 
     ArrayList<Integer> al = new ArrayList<>();
@@ -11,10 +11,10 @@ public class Main {
     al.add(3);
     al.add(8);
 
-    System.out.println(sum(al));
+    System.out.println(sumAL(al));
   }
 
-  public static int sum(ArrayList<Integer> input) {
+  public static int sumAL(ArrayList<Integer> input) {
     int sum = 0;
     for (Integer integer : input) {
       sum += integer;
