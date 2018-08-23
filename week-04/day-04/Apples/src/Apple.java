@@ -1,9 +1,8 @@
 public class Apple {
-  String apple;
+  private String apple;
 
-  public String getApple(String apple) {
+  public Apple(String apple) {
     this.apple = apple;
-    return apple;
   }
 
   public String printApple() {
