@@ -29,7 +29,7 @@ public class Student implements Cloneable {
   }
 
   @Override
-  protected Object clone() throws CloneNotSupportedException {
-    return super.clone();
+  protected Student clone() {
+    return new Student(this.name, this.age, this.gender, this.previousOrganization);
   }
 }

@@ -2,10 +2,8 @@ public class Main {
   public static void main(String[] args) {
     Student student = new Student("John", 20, "male", "BME");
 
-    try {
-      Student student2 = (Student)student.clone();
-    } catch (CloneNotSupportedException e) {
-      e.printStackTrace();
-    }
+    Student student2 = student.clone();
+
+    System.out.println(student2.name);
   }
 }
