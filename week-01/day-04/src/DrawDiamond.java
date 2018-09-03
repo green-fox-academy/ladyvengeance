@@ -37,22 +37,25 @@ public class DrawDiamond {
         }
         System.out.println();
       }
+    } else {
+      for (int i = 1; i <= num / 2 + 1; i++) {
+        for (int k = num / 2; k >= i; k--) {
+          System.out.print(" ");
+        }
+        for (int l = 1; l <= 2 * i -1; l++) {
+          System.out.print("*");
+        }
+        System.out.println();
+      }
+      for (int j = 1; j <= num / 2; j++) {
+        for (int m = 1; m <= j; m++) {
+          System.out.print(" ");
+        }
+        for (int n = num - 1; n >= 2 * j; n--) {
+          System.out.print("*");
+        }
+        System.out.println();
+      }
     }
-//    else {
-//      for (int i = 1; i <= num; i++) {
-//        for (int j = num / 2; j >= i; j--) {
-//          System.out.print(" ");
-//        }
-//        for (int k = 1; k <= 2 * i - 1; k++) {
-//          System.out.println("*");
-//        }
-//        for (int l = num / 2; l >= i; l--) {
-//          System.out.println("*");
-//        }
-//        for (int m = 1; m <= 2 * i -1; m++) {
-//          System.out.println(" ");
-//        }
-//      }
-//    }
   }
 }
