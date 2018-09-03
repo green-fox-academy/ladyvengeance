@@ -26,14 +26,16 @@ public class DrawDiamond {
         for (int l = 1; l <= 2 * i -1; l++) {
           System.out.print("*");
         }
+        System.out.println();
       }
-      for (int j = 1; j <= num / 2 ; j++) {
-        for (int m = 1; m <= 2 * j - 1 ; m++) {
+      for (int j = 1; j <= num / 2; j++) {
+        for (int m = 1; m <= j; m++) {
           System.out.print(" ");
         }
-        for (int n = num / 2; n >= j ; n--) {
+        for (int n = num - 1; n >= 2 * j - 1; n--) {
           System.out.print("*");
         }
+        System.out.println();
       }
     }
 //    else {
