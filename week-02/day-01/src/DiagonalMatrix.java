@@ -1,22 +1,25 @@
 public class DiagonalMatrix {
   public static void main(String[] args) {
-  /*  int[][] num = {
-        {0},
-        {1}
-    };
-    for (int i = 1; i <= num; i++) {
-      for (int j = 1; j <= n; j++) {
-        if (i > 1 && i < n && j > 1 && j < n) {
-          if (i == j) {
-            System.out.print("%");
-          } else {
-            System.out.print(" ");
-          }
+// - Create (dynamically) a two dimensional array
+//   with the following matrix. Use a loop!
+//
+//   1 0 0 0
+//   0 1 0 0
+//   0 0 1 0
+//   0 0 0 1
+//
+// - Print this two dimensional array to the output
+    int[][] numArray = new int[4][4];
+
+    for (int i = 0; i < numArray.length; i++) {
+      for (int j = 0; j < numArray.length; j++) {
+        if (i == j) {
+          System.out.print("1 ");
         } else {
-          System.out.print("%");
+          System.out.print("0 ");
         }
       }
       System.out.println();
     }
-  */}
+  }
 }
