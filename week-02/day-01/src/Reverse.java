@@ -10,12 +10,12 @@ public class Reverse {
 
     int[] reverse = new int[aj.length];
     int lastIndex = aj.length - 1;
-    int last = aj[lastIndex];
+    int lastDigit = aj[lastIndex];
     for (int i = 0; i < aj.length; i++) {
-      reverse[i] += last;
+      reverse[i] += lastDigit;
       lastIndex -= 1;
       if (lastIndex >= 0) {
-        last = aj[lastIndex];
+        lastDigit = aj[lastIndex];
       }
     }
 
