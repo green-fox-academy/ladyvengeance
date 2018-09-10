@@ -3,8 +3,7 @@ public class Exercise05 {
 //    Write a Stream Expression to find the uppercase characters in a string!
     String whatever = "Any uPperCase leTTers In herE?";
 
-    String[] whateverAsArray = whatever.split("");;
-
+    String[] whateverAsArray = whatever.split("");
     for (String c : whateverAsArray) {
       if(Character.isUpperCase(c.charAt(0))) {
         System.out.print(c + " ");
@@ -19,7 +18,6 @@ public class Exercise05 {
             StringBuilder::appendCodePoint,
             StringBuilder::append)
         .toString();
-
     System.out.println(onlyUps);
   }
 }
