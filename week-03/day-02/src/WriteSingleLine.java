@@ -13,14 +13,13 @@ public class WriteSingleLine {
     addNewLine("my-file.txt");
   }
   public static void addNewLine (String x) {
-
     try {
       Writer writer = new BufferedWriter(new OutputStreamWriter(
           new FileOutputStream(x, true), "UTF-8"));
       writer.append("\nDeszpoth Csilla");
       writer.close();
     } catch (Exception e) {
-      System.out.println("Unable to read file: my-file.txt");
+      System.out.println("Unable to read file: " + x);
     }
   }
 }

@@ -15,10 +15,10 @@ public class CountLines {
 
   }
   public static int numOfLines (String x) {
-    Path path = Paths.get(x);
     int counter = 0;
 
     try {
+      Path path = Paths.get(x);
       List<String> lines = Files.readAllLines(path);
       for (String line : lines) {
         counter++;
