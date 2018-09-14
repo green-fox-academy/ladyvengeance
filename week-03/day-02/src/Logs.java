@@ -1,6 +1,11 @@
-import java.lang.reflect.Array;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Logs {
   public static void main(String[] args) {
@@ -9,9 +14,55 @@ public class Logs {
     // Write a function that returns an array with the unique IP addresses.
     // Write a function that returns the GET / POST request ratio.
 
-//    System.out.println(uniqueIP("Logs.txt"));
+    System.out.println(getallIPs("Logs.txt"));
+    System.out.println(getGetPostRatio("Logs.txt"));
   }
-  static void uniqueIP (String input) {
-    Path path = Paths.get(input);
+  private static List<String> getUniqueIPs (String filename) {
+    List<String> uniqueIPs = new ArrayList<>();
+
+    return uniqueIPs;
+  }
+
+  private static List<String> getallIPs (String filename) {
+    List<String> content = getContent(filename);
+    List<String> allIPs = new ArrayList<>();
+
+
+    for (String line : content) {
+      Pattern pattern = Pattern.compile("\\d(2)\\.\\d(2)\\.\\d(2)\\.\\d(2)");
+      Matcher matcher = pattern.matcher(line);
+      while (matcher.find()) {
+        allIPs.add(matcher.group());
+      }
+    }
+    return allIPs;
+  }
+
+  private static double getGetPostRatio (String filename) {
+    List<String> content = getContent(filename);
+    double getCounter = 0.;
+    double postCounter = 0.;
+
+    for (String line : content) {
+      if (line.contains("GET")) {
+        getCounter++;
+      } else if (line.contains("POST")) {
+        postCounter++;
+      }
+    }
+    double ratio = getCounter / postCounter;
+    return ratio;
+  }
+
+  private static List<String> getContent(String filename) {
+    Path path = Paths.get(filename);
+    List<String> content = new ArrayList<>();
+
+    try {
+      content = Files.readAllLines(path);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return content;
   }
 }
