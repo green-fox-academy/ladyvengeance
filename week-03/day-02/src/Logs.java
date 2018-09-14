@@ -14,12 +14,20 @@ public class Logs {
     // Write a function that returns an array with the unique IP addresses.
     // Write a function that returns the GET / POST request ratio.
 
-    System.out.println(getallIPs("Logs.txt"));
-    System.out.println(getGetPostRatio("Logs.txt"));
+    String filename = "Logs.txt";
+
+    System.out.println(getUniqueIPs(filename));
+    System.out.println(getGetPostRatio(filename));
   }
   private static List<String> getUniqueIPs (String filename) {
+    List<String> allIPs = getallIPs(filename);
     List<String> uniqueIPs = new ArrayList<>();
 
+    for (String uniqueIP : allIPs) {
+      if (!uniqueIPs.contains(uniqueIP)) {
+        uniqueIPs.add(uniqueIP);
+      }
+    }
     return uniqueIPs;
   }
 
@@ -29,7 +37,7 @@ public class Logs {
 
 
     for (String line : content) {
-      Pattern pattern = Pattern.compile("\\d(2)\\.\\d(2)\\.\\d(2)\\.\\d(2)");
+      Pattern pattern = Pattern.compile("\\d{2}\\.\\d{2}\\.\\d{2}\\.\\d{2}");
       Matcher matcher = pattern.matcher(line);
       while (matcher.find()) {
         allIPs.add(matcher.group());
