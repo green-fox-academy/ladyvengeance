@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:style="${randomcolor} + ';font-size:' + ${fontsize} + 'px;'">
+    <p  th:text="${hello} + ' ' + ${name} + '! This site was loaded ' + ${counter} + ' times since last server start.'"/>
+</div>
+</body>
+</html>
