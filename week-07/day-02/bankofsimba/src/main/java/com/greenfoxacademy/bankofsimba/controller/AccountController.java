@@ -14,6 +14,17 @@ public class AccountController {
 
   public AccountController() {
   accounts = new ArrayList<>();
+    accounts.add(new BankAccount("Simba", 2000, "lion"));
+    accounts.add(new BankAccount("Nala", 2000, "lion"));
+    accounts.add(new BankAccount("Sarabi", 2500, "lion"));
+    accounts.add(new BankAccount("Mufasa", 3000, "lion"));
+    accounts.add(new BankAccount("Scar", 500, "lion"));
+    accounts.add(new BankAccount("Shenzi", 200, "hyena"));
+    accounts.add(new BankAccount("Ed", 100, "hyena"));
+    accounts.add(new BankAccount("Banzai", 100, "hyena"));
+    accounts.add(new BankAccount("Timon", 300, "meerkat"));
+    accounts.add(new BankAccount("Pumbaa", 300, "warthog"));
+    accounts.add(new BankAccount("Rafiki", 1000, "mandrill"));
   }
 
   @GetMapping("/show")
