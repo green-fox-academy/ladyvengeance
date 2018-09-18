@@ -14,6 +14,7 @@
                 <th>ID</th>
                 <th>NAME</th>
                 <th>KING?</th>
+                <th>Good/Bad</th>
                 <th>BALANCE</th>
                 <th>ANIMAL TYPE</th>
             </tr>
@@ -24,6 +25,7 @@
                 <td th:text="*{name}"></td>
                 <td th:text="*{isKing()}? 'Cool beans!' : 'No king :('"
                     th:style="*{isKing()}? 'background-color: red' : 'background-color: lightblue'"></td>
+                <td th:text="*{isGoodGuy()}? 'Good one' : 'Bad guy'"></td>
                 <td th:text="*{balance}"></td>
                 <td th:text="*{animalType}"></td>
             </tr>
