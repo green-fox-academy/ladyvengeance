@@ -8,8 +8,24 @@
 <body>
 <h1>Account holders at the Bank of Simba</h1>
 <div>
-    <p th:text="'This is a <em>HTML</em> text. <b>Enjoy yourself!</b>'"></p>
-    <p th:utext="'This is a <em>HTML</em> text. <b>Enjoy yourself!</b>'"></p>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>BALANCE</th>
+                <th>ANIMAL TYPE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="account : ${accounts}" th:object="${account}">
+                <td th:text="${accountStat.count}"></td>
+                <td th:text="*{name}"></td>
+                <td th:text="*{balance}"></td>
+                <td th:text="*{animalType}"></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

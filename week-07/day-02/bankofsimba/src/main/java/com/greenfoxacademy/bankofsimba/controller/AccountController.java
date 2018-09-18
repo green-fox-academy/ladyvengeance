@@ -25,6 +25,13 @@ public class AccountController {
     accounts.add(new BankAccount("Timon", 300, "meerkat"));
     accounts.add(new BankAccount("Pumbaa", 300, "warthog"));
     accounts.add(new BankAccount("Rafiki", 1000, "mandrill"));
+    accounts.add(new BankAccount("Zazu", 1200, "red-billed hornbill"));
+  }
+
+  @GetMapping("/accounts")
+  public String showListOfAccounts(Model model) {
+    model.addAttribute("accounts", accounts);
+    return "accounts";
   }
 
   @GetMapping("/show")

@@ -1,9 +1,12 @@
 package com.greenfoxacademy.bankofsimba.model;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class BankAccount {
   private String name;
   private long balance;
   private String animalType;
+  private long id;
 
   public BankAccount() {
   }
