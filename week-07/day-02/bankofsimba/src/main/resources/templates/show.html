@@ -9,7 +9,7 @@
 <h1>Welcome to your account</h1>
     <div th:object="${bankAccount}">
         <p th:text="'Name: ' + *{name}"></p>
-        <p th:text="'Balance: ' + ${#numbers.formatDecimal({bankAccount.balance} , 0, 'NONE', 2, 'POINT')} + ' Zebra'"></p>
+        <p th:text="'Balance: ' + *{balance}"></p>
         <p th:text="'Animal type: ' + *{animalType}"></p>
     </div>
 </body>

@@ -1,10 +1,10 @@
 package com.greenfoxacademy.bankofsimba.model;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.text.DecimalFormat;
 
 public class BankAccount {
   private String name;
-  private long balance;
+  private double balance;
   private String animalType;
   private boolean isKing;
   private boolean isGoodGuy;
@@ -12,7 +12,7 @@ public class BankAccount {
   public BankAccount() {
   }
 
-  public BankAccount(String name, long balance, String animalType, boolean isKing, boolean isGoodGuy) {
+  public BankAccount(String name, double balance, String animalType, boolean isKing, boolean isGoodGuy) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
@@ -28,8 +28,9 @@ public class BankAccount {
     this.name = name;
   }
 
-  public long getBalance() {
-    return balance;
+  public String getBalance() {
+    DecimalFormat decimalFormat = new DecimalFormat("0.00");
+    return decimalFormat.format(balance) + " Zebra";
   }
 
   public void setBalance(long balance) {
