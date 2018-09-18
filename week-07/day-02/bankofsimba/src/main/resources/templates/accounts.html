@@ -13,6 +13,7 @@
             <tr>
                 <th>ID</th>
                 <th>NAME</th>
+                <th>KING?</th>
                 <th>BALANCE</th>
                 <th>ANIMAL TYPE</th>
             </tr>
@@ -21,6 +22,8 @@
             <tr th:each="account : ${accounts}" th:object="${account}">
                 <td th:text="${accountStat.count}"></td>
                 <td th:text="*{name}"></td>
+                <td th:text="*{isKing()}? 'Cool beans!' : 'No king :('"
+                    th:style="*{isKing()}? 'background-color: red' : 'background-color: lightblue'"></td>
                 <td th:text="*{balance}"></td>
                 <td th:text="*{animalType}"></td>
             </tr>
