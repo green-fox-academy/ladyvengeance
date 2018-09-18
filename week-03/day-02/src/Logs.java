@@ -13,19 +13,19 @@ public class Logs {
     // Each line represents a log message from a web server
     // Write a function that returns an array with the unique IP addresses.
     // Write a function that returns the GET / POST request ratio.
-
     String filename = "Logs.txt";
 
     System.out.println(getUniqueIPs(filename));
     System.out.println(getGetPostRatio(filename));
   }
+
   private static List<String> getUniqueIPs (String filename) {
     List<String> allIPs = getallIPs(filename);
     List<String> uniqueIPs = new ArrayList<>();
 
-    for (String uniqueIP : allIPs) {
-      if (!uniqueIPs.contains(uniqueIP)) {
-        uniqueIPs.add(uniqueIP);
+    for (String ip : allIPs) {
+      if (!uniqueIPs.contains(ip)) {
+        uniqueIPs.add(ip);
       }
     }
     return uniqueIPs;

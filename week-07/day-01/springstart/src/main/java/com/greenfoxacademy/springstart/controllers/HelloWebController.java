@@ -31,4 +31,14 @@ public class HelloWebController {
 
     return "greeting";
   }
+
+  @RequestMapping("/default")
+  public String tldefault() {
+    return "default";
+  }
+
+  @RequestMapping("/hello")
+  public String hello() {
+    return "hello";
+  }
 }
