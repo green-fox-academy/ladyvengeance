@@ -6,6 +6,9 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <h1> Welcome to your account</h1>
+    <h1>Welcome to your account</h1>
+    <div>
+        <p th:text="'Name: ' + ${name} + 'Balance: ' + ${balance} + 'Animal Type: ' + ${animaltype}"/>
+    </div>
 </body>
 </html>
