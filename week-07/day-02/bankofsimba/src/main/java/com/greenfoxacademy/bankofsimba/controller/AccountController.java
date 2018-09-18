@@ -10,10 +10,12 @@ public class AccountController {
 
   @RequestMapping("/show")
   public String showAccount(Model model) {
-    BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
-    model.addAttribute("name", bankAccount.getName());
-    model.addAttribute("balance", bankAccount.getBalance());
-    model.addAttribute("animaltype", bankAccount.getAnimalType());
-    return "index";
+    model.addAttribute("bankAccount", new BankAccount("Simba", 2000, "lion"));
+    return "show";
+  }
+
+  @RequestMapping("/welcome")
+  public String displayWelcome() {
+    return "welcome";
   }
 }
