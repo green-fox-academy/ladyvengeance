@@ -1,9 +1,9 @@
 package com.greenfoxacademy.bankofsimba.model;
 
 public class BankAccount {
-  String name;
-  long balance;
-  String animalType;
+  private String name;
+  private long balance;
+  private String animalType;
 
   public BankAccount() {
   }
