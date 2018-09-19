@@ -1,5 +1,6 @@
 package com.greenfoxacademy.dependencyinjection;
 
+import com.greenfoxacademy.dependencyinjection.services.MyColor;
 import com.greenfoxacademy.dependencyinjection.services.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,6 +12,9 @@ public class DependencyinjectionApplication implements CommandLineRunner {
   @Autowired
   Printer printer;
 
+  @Autowired
+  MyColor myColor;
+
   public static void main(String[] args) {
     SpringApplication.run(DependencyinjectionApplication.class, args);
   }
@@ -18,5 +22,6 @@ public class DependencyinjectionApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     printer.log("yellow");
+    myColor.printColor();
   }
 }

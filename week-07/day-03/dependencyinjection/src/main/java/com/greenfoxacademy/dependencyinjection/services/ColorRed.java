@@ -1,8 +1,13 @@
 package com.greenfoxacademy.dependencyinjection.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class ColorRed implements MyColor {
+  @Autowired
+  Printer printer;
+
   @Override
   public void printColor() {
-    System.out.println("The deepest of crimson shall only compare");
+    printer.log("The deepest of crimson shall only compare");
   }
 }
