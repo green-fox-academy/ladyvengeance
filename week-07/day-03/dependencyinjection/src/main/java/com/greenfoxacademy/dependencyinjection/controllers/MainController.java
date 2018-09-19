@@ -20,7 +20,7 @@ public class MainController {
 
   @GetMapping("/useful/colored")
   public String showUsefulColored(Model model) {
-    model.addAttribute(utilityService.randomColor());
+    model.addAttribute("randomcolor", utilityService.randomColor());
     return "colored";
   }
 
