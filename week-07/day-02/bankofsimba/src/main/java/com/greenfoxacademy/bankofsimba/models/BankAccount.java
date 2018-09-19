@@ -1,4 +1,4 @@
-package com.greenfoxacademy.bankofsimba.model;
+package com.greenfoxacademy.bankofsimba.models;
 
 import java.text.DecimalFormat;
 
