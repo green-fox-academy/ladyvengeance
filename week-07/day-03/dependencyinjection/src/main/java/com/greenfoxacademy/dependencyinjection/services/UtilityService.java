@@ -27,18 +27,10 @@ public class UtilityService {
     return (email.contains("@") && email.contains("."));
   }
 
-  public String caesarEncode(String text, int number) {
+  public String caesarCypher(String input, int number) {
     String result = "";
-    for(int i = 0; i < text.length(); i++) {
-      result += (char)((int)text.charAt(i) + number);
-    }
-    return result;
-  }
-
-  public String caesarDecode(String text, int number) {
-    String result = "";
-    for(int i = 0; i < text.length(); i++) {
-      result += (char)((int)text.charAt(i) - number);
+    for(int i = 0; i < input.length(); i++) {
+      result += (char)((int)input.charAt(i) + number);
     }
     return result;
   }

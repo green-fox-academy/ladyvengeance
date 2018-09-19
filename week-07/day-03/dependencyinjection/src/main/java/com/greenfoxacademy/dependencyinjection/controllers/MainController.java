@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -32,14 +31,14 @@ public class MainController {
   }
 
   @GetMapping("/useful/encode")
-  public String caesarEncode(@RequestParam("encode") String toencode, Model model) {
-    model.addAttribute("encode", utilityService.caesarEncode(toencode, 2));
+  public String encode(@RequestParam("input") String input, @RequestParam ("number") int number, Model model) {
+    model.addAttribute("input", utilityService.caesarCypher(input, number));
     return "encode";
   }
 
   @GetMapping("/useful/decode")
-  public String caesarDecode(@RequestParam("decode") String todecode, Model model) {
-    model.addAttribute("decode", utilityService.caesarEncode(todecode, 2));
+  public String decode(@RequestParam("input") String input, @RequestParam ("number") int number, Model model) {
+    model.addAttribute("input", utilityService.caesarCypher(input, -number));
     return "decode";
   }
 }
