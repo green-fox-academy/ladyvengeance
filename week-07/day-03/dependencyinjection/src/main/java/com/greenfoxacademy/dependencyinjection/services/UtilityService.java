@@ -1,7 +1,6 @@
 package com.greenfoxacademy.dependencyinjection.services;
 
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.Random;
 
