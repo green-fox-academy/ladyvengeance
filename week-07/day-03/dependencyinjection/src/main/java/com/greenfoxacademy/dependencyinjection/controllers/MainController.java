@@ -25,7 +25,7 @@ public class MainController {
 
   @GetMapping("/useful/email")
   public String showEmail(@RequestParam("email") String email, Model model) {
-    model.addAttribute("validate", utilityService.validateEmail(email));
+    model.addAttribute("validator", utilityService.validateEmail(email));
     model.addAttribute("email", email);
     return "email";
   }
