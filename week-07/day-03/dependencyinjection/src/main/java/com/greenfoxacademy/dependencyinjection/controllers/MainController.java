@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -28,5 +29,17 @@ public class MainController {
     model.addAttribute("validator", utilityService.validateEmail(email));
     model.addAttribute("email", email);
     return "email";
+  }
+
+  @GetMapping("/useful/encode")
+  public String caesarEncode(@RequestParam("encode") String toencode, Model model) {
+    model.addAttribute("encode", utilityService.caesarEncode(toencode, 2));
+    return "encode";
+  }
+
+  @GetMapping("/useful/decode")
+  public String caesarDecode(@RequestParam("decode") String todecode, Model model) {
+    model.addAttribute("decode", utilityService.caesarEncode(todecode, 2));
+    return "decode";
   }
 }
