@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Freddie the Fox's Programmer Club for Programmer Foxes</title>
 </head>
 <body>
-
+    <div>
+        <ul>
+            <li><a th:href="@{'/index.html'}">Information</a></li>
+        </ul>
+    </div>
+    <div>
+        <img th:src="@{'/resources/static/img/greenfox.png'}">
+    </div>
+    <div>
+        <p th:text="'This is Mr Fox. Currently living on pizza and lemonade. He knows 2 tricks.'"></p>
+    </div>
+    <div>
+        <h1>
+            <p th:text="'Known tricks'"></p>
+            <ul>
+                <li th:text="'write HTML'"></li>
+                <li th:text="'code in Java'"></li>
+            </ul>
+        </h1>
+    </div>
 </body>
 </html>
