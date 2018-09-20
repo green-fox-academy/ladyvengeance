@@ -1,5 +1,8 @@
 package com.greenfoxacademy.foxclub.services;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Fox {
   private String name;
 
