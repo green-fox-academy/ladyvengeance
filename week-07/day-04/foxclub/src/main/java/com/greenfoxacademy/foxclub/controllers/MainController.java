@@ -16,6 +16,9 @@ public class MainController {
       return "redirect:/login";
     }
     model.addAttribute("name", name);
+    model.addAttribute("food", food);
+    model.addAttribute("drink", drink);
+    model.addAttribute("tricks", tricks);
     return "index";
   }
 
