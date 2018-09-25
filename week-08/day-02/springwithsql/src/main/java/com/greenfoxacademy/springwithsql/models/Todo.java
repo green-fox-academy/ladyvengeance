@@ -1,5 +1,8 @@
 package com.greenfoxacademy.springwithsql.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Todo {
   private Long id;
   private String title;
