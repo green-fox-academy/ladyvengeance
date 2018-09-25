@@ -9,16 +9,28 @@
     <h1>
         <p th:text="'TODOS for today:'"></p>
     </h1>
-    <ul>
-        <li th:each="todo : ${todos}" th:text="${todo.getTitle()}"></li>
-        <!--<li th:text="'Start the day'"></li>-->
-        <!--<br>-->
-        <!--<li th:text="'Finish H2 workshop1'"></li>-->
-        <!--<br>-->
-        <!--<li th:text="'Finish JPA workshop2'"></li>-->
-        <!--<br>-->
-        <!--<li th:text="'Create a CRUD project'"></li>-->
-    </ul>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ACTION</th>
+                    <th>DONE?</th>
+                    <th>URGENT?</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="todo : ${todos}" th:object="${todo}">
+                    <td th:text="*{id}"></td>
+                    <td th:text="*{title}"></td>
+                    <td th:text="*{isDone()}? 'Yes' : 'No'"
+                        th:style="*{isDone()}? 'background-color: lime; color:blue' : 'background-color: red'"></td>
+                    <td th:text="*{isUrgent()}? 'Yes' : 'No'"
+                        th:style="*{isUrgent()}? 'background-color: lime; color:blue' : 'background-color: red'"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 </div>
 </body>
 </html>

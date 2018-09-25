@@ -21,7 +21,7 @@ public class ConnectionwithmysqlApplication implements CommandLineRunner {
   public void run(String... args) throws Exception {
     todoRepository.save(new Todo("Learn Object Relational Mapping"));
     todoRepository.save(new Todo("Play darts",false, true));
-    todoRepository.save(new Todo("Go home and sleep"));
+    todoRepository.save(new Todo("Go home and sleep", true, false));
     todoRepository.save(new Todo("Watch Frozen for the umpteenth time", true, false));
   }
 }
