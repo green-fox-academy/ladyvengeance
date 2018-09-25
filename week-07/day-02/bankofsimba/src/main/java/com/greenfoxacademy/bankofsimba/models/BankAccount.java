@@ -1,5 +1,4 @@
 package com.greenfoxacademy.bankofsimba.models;
-
 import java.text.DecimalFormat;
 
 public class BankAccount {
