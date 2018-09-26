@@ -25,12 +25,14 @@ public class TodoController {
   @GetMapping(value = {"/", "/list"})
   public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model) {
     if (isActive == null) {
-      return "redirect:/list";
+      model.addAttribute("todos", todoRepository.findAll());
+      return "todolist";
     } else if (isActive == true) {
       model.addAttribute("todos", todoRepository.findByIsDoneFalse());
       return "todolist";
+    } else if (isActive == false){
+      model.addAttribute("todos", todoRepository.findByIsDoneTrue());
     }
-    model.addAttribute("todos", todoRepository.findAll());
     return "todolist";
   }
 }
