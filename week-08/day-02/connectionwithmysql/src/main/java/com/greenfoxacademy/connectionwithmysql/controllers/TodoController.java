@@ -29,32 +29,38 @@ public class TodoController {
   }
 
   @GetMapping(value = {"/", "/list"})
-  public String list(@RequestParam(value = "isActive", required = false) Boolean isActive,
-                     @RequestParam(value = "isUrgent", required = false) Boolean isUrgent, Model model) {
+  public String list(@RequestParam(required = false) Boolean isActive,
+                     @RequestParam(required = false) Boolean isUrgent, Model model) {
 
-    if (isActive) {
-      if (isUrgent) {
-       model.addAttribute("todos", todoRepository.findByIsDoneAndIsUrgent(false, true));
-      } else {
-        model.addAttribute("todos", todoRepository.findByIsDone(false));
+    if (isActive == null) {
+      if (isUrgent == null) {
+        model.addAttribute("todos", todoRepository.findAll());
+      } else if (isUrgent) {
+        model.addAttribute("todos", todoRepository.findByIsUrgent(true));
+      } else if (!isUrgent) {
+        model.addAttribute("todos", todoRepository.findByIsUrgent(false));
       }
-    } else if (isUrgent) {
-      model.addAttribute("todos", todoRepository.findByIsUrgent(true));
+    } else if (isActive) {
+      if (isUrgent == null) {
+        model.addAttribute("todos", todoRepository.findByIsDone(false));
+      } else if (isUrgent) {
+        model.addAttribute("todos", todoRepository.findByIsDoneAndIsUrgent(false, true));
+      } else if (!isUrgent) {
+        model.addAttribute("todos", todoRepository.findByIsDoneAndIsUrgent(false, false));
+      }
+    } else if (!isActive) {
+      if (isUrgent == null) {
+        model.addAttribute("todos", todoRepository.findByIsDone(true));
+      } else if (isUrgent) {
+        model.addAttribute("todos", todoRepository.findByIsDoneAndIsUrgent(true, true));
+      } else if (!isUrgent) {
+        model.addAttribute("todos", todoRepository.findByIsDoneAndIsUrgent(true, false));
+      }
     }
-
-//    if (isActive == null && isUrgent == null) {
-//      model.addAttribute("todos", todoRepository.findAll());
-//    } else if (isActive && isUrgent == null) {
-//      model.addAttribute("todos", todoRepository.findByIsDoneFalse());
-//    } else if (!isActive && isUrgent == null) {
-//      model.addAttribute("todos", todoRepository.findByIsDoneTrue());
-//    } else if (isUrgent == true && isActive == null) {
-//      model.addAttribute("todos", todoRepository.findByIsUrgentTrue());
-//    } else if (isUrgent == false && isActive == null) {
-//      model.addAttribute("todos", todoRepository.findByIsUrgentFalse());
-//    } else if (isActive == true && isUrgent == true) {
-//      model.addAttribute("todos", todoRepository.findByIsDoneFalseAndIsUrgentTrue());
-//    }
     return "todolist";
   }
 }
+
+
+//    isUrgent = isUrgent == null ? true : isUrgent;
+//    isActive = isActive == null ? false : isActive;
