@@ -21,6 +21,8 @@ public class Todo {
 
   public Todo(String title) {
     this.title = title;
+    this.isUrgent = false;
+    this.isDone = false;
   }
 
   public Todo(String title, boolean isUrgent, boolean isDone) {
