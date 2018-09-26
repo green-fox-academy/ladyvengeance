@@ -7,6 +7,9 @@ import java.util.List;
 
 @Repository
 public interface TodoRepository extends CrudRepository<Todo, Long> {
+  List<Todo> findByIsDoneFalseAndIsUrgentTrue();
   List<Todo> findByIsDoneFalse();
   List<Todo> findByIsDoneTrue();
+  List<Todo> findByIsUrgentTrue();
+  List<Todo> findByIsUrgentFalse();
 }

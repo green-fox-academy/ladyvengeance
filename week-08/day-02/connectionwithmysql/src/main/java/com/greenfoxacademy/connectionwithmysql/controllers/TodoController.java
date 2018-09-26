@@ -1,8 +1,10 @@
 package com.greenfoxacademy.connectionwithmysql.controllers;
 
 import com.greenfoxacademy.connectionwithmysql.repositories.TodoRepository;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,15 +25,20 @@ public class TodoController {
   }
 
   @GetMapping(value = {"/", "/list"})
-  public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model) {
-    if (isActive == null) {
+  public String list(@RequestParam(value = "isActive", required = false) Boolean isActive,
+                     @RequestParam(value = "isUrgent", required = false) Boolean isUrgent, Model model) {
+    if (isActive == null && isUrgent == null) {
       model.addAttribute("todos", todoRepository.findAll());
-      return "todolist";
+    } else if (isActive == true && isUrgent == true) {
+      model.addAttribute("todos", todoRepository.findByIsDoneFalseAndIsUrgentTrue());
     } else if (isActive == true) {
       model.addAttribute("todos", todoRepository.findByIsDoneFalse());
-      return "todolist";
     } else if (isActive == false){
       model.addAttribute("todos", todoRepository.findByIsDoneTrue());
+    } else if (isUrgent == true) {
+      model.addAttribute("todos", todoRepository.findByIsUrgentTrue());
+    } else if (isUrgent == false) {
+      model.addAttribute("todos", todoRepository.findByIsUrgentFalse());
     }
     return "todolist";
   }
