@@ -14,7 +14,7 @@
         <img src="img/greenfox.png">
     </div>
     <div th:object = "Fox">
-        <p th:text="'This is ' + *{name} + '. Currently living on ' + *{food} + ' and ' + *{drink} + '. They know ' + *{numberoftricks} + ' tricks.'"></p>
+        <span th:text="*{fox != null} ? 'This is ' + *{name} + '. Currently living on ' + *{food} + ' and ' + *{drink} + '. They know ' + *{#lists.size(fox.tricks)} + ' tricks.' : 'You need to log in to see information about your fox.'"></span>
     </div>
     <div>
         <h1>
