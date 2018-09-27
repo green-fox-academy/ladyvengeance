@@ -1,8 +1,10 @@
 package com.greenfoxacademy.foxclub.models;
 
+import javax.persistence.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Fox {
   private String name;
   private List<String> tricks;

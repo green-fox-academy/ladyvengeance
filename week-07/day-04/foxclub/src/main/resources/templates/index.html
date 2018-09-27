@@ -13,8 +13,8 @@
     <div>
         <img src="img/greenfox.png">
     </div>
-    <div>
-        <p th:text="'This is ' + ${name} + '. Currently living on ' + ${food} + ' and ' + ${drink} + '. They know ' + ${numberoftricks} + ' tricks.'"></p>
+    <div th:object = "Fox">
+        <p th:text="'This is ' + *{name} + '. Currently living on ' + *{food} + ' and ' + *{drink} + '. They know ' + *{numberoftricks} + ' tricks.'"></p>
     </div>
     <div>
         <h1>

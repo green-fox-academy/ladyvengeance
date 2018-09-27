@@ -1,5 +1,6 @@
 package com.greenfoxacademy.foxclub.controllers;
 
+import com.greenfoxacademy.foxclub.models.Fox;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +15,7 @@ public class MainController {
     if (name == null) {
       return "redirect:/login";
     }
-    model.addAttribute("name", name);
-    model.addAttribute("food", food);
-    model.addAttribute("drink", drink);
-    model.addAttribute("tricks", tricks);
+    model.addAttribute("name", new Fox(name));
     return "index";
   }
 
