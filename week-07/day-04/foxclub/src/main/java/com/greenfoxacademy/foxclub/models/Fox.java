@@ -7,9 +7,9 @@ import java.util.List;
 @Entity
 public class Fox {
   private String name;
-  private List<String> tricks;
   private String food;
   private String drink;
+  private List<String> tricks;
 
   public Fox() {
   }
@@ -29,14 +29,6 @@ public class Fox {
     this.name = name;
   }
 
-  public List<String> getTricks() {
-    return tricks;
-  }
-
-  public void setTricks(List<String> tricks) {
-    this.tricks = tricks;
-  }
-
   public String getFood() {
     return food;
   }
@@ -51,5 +43,13 @@ public class Fox {
 
   public void setDrink(String drink) {
     this.drink = drink;
+  }
+
+  public List<String> getTricks() {
+    return tricks;
+  }
+
+  public void setTricks(List<String> tricks) {
+    this.tricks = tricks;
   }
 }
