@@ -1,9 +1,6 @@
 package com.greenfoxacademy.restprojectfrontend.controllers;
 
-import com.greenfoxacademy.restprojectfrontend.models.dtos.AppendA;
-import com.greenfoxacademy.restprojectfrontend.models.dtos.ErrorClass;
-import com.greenfoxacademy.restprojectfrontend.models.dtos.Input;
-import com.greenfoxacademy.restprojectfrontend.models.dtos.Message;
+import com.greenfoxacademy.restprojectfrontend.models.dtos.*;
 import com.greenfoxacademy.restprojectfrontend.services.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,7 +47,10 @@ public class MainRestController {
   }
 
   @PostMapping("/dountil/{action}")
-  public ResponseEntity<?> doUntil(@PathVariable(value = "action") String action) {
-    return
+  public ResponseEntity<?> doUntil(@PathVariable(value = "action", required = false) String action, @RequestBody(required = false) DoUntil doUntil) {
+    if (doUntil == null) {
+      return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new ErrorClass("Please provide a number!"));
+    }
+    return ResponseEntity.status(HttpStatus.OK).body(new Result(exerciseService.checkActionUntil(action, doUntil)));
   }
 }

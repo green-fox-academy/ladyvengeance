@@ -1,5 +1,6 @@
 package com.greenfoxacademy.restprojectfrontend.services;
 
+import com.greenfoxacademy.restprojectfrontend.models.dtos.DoUntil;
 import com.greenfoxacademy.restprojectfrontend.models.entities.DataObject;
 import com.greenfoxacademy.restprojectfrontend.repositories.ExerciseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,23 @@ public class ExerciseServiceImpl implements ExerciseService {
   @Override
   public void saveData(String endpoint, String data) {
     exerciseRepository.save(new DataObject(endpoint,data));
+  }
+
+  @Override
+  public Integer checkActionUntil(String action, DoUntil number) {
+    if (action.equals("sum")) {
+      return sumUntil(number.getUntil());
+    }
+    return factorUntil(number.getUntil());
+  }
+
+  @Override
+  public Integer sumUntil(Integer action) {
+    return action == 1? 1 : action + sumUntil(action - 1);
+  }
+
+  @Override
+  public Integer factorUntil(Integer action) {
+    return action == 1? 1 : action * sumUntil(action - 1);
   }
 }
