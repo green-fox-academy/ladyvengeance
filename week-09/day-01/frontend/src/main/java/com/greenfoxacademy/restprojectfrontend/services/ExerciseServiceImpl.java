@@ -31,11 +31,31 @@ public class ExerciseServiceImpl implements ExerciseService {
 
   @Override
   public Integer sumUntil(Integer action) {
-    return action == 1? 1 : action + sumUntil(action - 1);
+    return action == 1 ? 1 : action + sumUntil(action - 1);
   }
 
   @Override
   public Integer factorUntil(Integer action) {
-    return action == 1? 1 : action * sumUntil(action - 1);
+    return action == 1 ? 1 : action * sumUntil(action - 1);
+  }
+
+  @Override
+  public Integer checkWhatWithNumbers(String what, Integer[] numbers) {
+    return null;
+  }
+
+  @Override
+  public Integer sumNumbers() {
+    return null;
+  }
+
+  @Override
+  public Integer multiplyNumbers() {
+    return null;
+  }
+
+  @Override
+  public Integer[] doubleNumbers() {
+    return new Integer[0];
   }
 }

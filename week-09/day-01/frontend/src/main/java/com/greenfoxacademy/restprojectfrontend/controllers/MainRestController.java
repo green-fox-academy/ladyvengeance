@@ -53,4 +53,12 @@ public class MainRestController {
     }
     return ResponseEntity.status(HttpStatus.OK).body(new Result(exerciseService.checkActionUntil(action, doUntil)));
   }
+
+  @PostMapping("/arrays")
+  public ResponseEntity<?> doWhatWithNumbers(@RequestBody(required = false) WhatWithNumbers whatWithNumbers) {
+    if (whatWithNumbers == null) {
+      return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new ErrorClass("Please provide what to do with the numbers!"));
+    }
+    return ResponseEntity.status(HttpStatus.OK).body(new Result());
+  }
 }

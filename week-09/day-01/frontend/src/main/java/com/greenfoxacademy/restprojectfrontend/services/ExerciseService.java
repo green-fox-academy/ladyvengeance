@@ -7,4 +7,8 @@ public interface ExerciseService {
   Integer checkActionUntil(String action, DoUntil number);
   Integer sumUntil(Integer action);
   Integer factorUntil(Integer action);
+  Integer checkWhatWithNumbers(String what, Integer[] numbers);
+  Integer sumNumbers();
+  Integer multiplyNumbers();
+  Integer[] doubleNumbers();
 }
