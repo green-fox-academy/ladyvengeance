@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface SpaceService {
   List<Planet> getPlanets();
-  Spaceship getShip(Long id);
-  void moveShipToPlanet(Long shipId, Long planetId);
+  Spaceship getShip(long id);
+  void moveShipToPlanet(long shipId, long planetId);
+  void movePeopleToShip(long shipId, long planetId);
+  void movePeopleToPlanet(long shipId, long planetId);
 }

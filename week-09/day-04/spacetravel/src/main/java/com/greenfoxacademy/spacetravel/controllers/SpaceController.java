@@ -22,12 +22,25 @@ public class SpaceController {
   @GetMapping("")
   public String showIndex(Model model) {
     model.addAttribute("planets", spaceService.getPlanets());
+    model.addAttribute("ship", spaceService.getShip(SHIP_ID));
     return "index";
   }
 
   @PostMapping("/movehere/{id}")
   public String moveToPlanet (@PathVariable(value = "id") Long planetId) {
     spaceService.moveShipToPlanet(SHIP_ID, planetId);
+    return "index";
+  }
+
+  @GetMapping("/toship/{id}")
+  public String movePeopleToShip(@PathVariable(value = "id") Long planetId) {
+    spaceService.movePeopleToShip(SHIP_ID, planetId);
+    return "index";
+  }
+
+  @GetMapping("/toplanet/{id}")
+  public String movePeopleToPlanet(@PathVariable(value = "id") Long planetId) {
+    spaceService.movePeopleToPlanet(SHIP_ID, planetId);
     return "index";
   }
 }

@@ -46,4 +46,8 @@ public class Spaceship {
   public void setUtilization(int utilization) {
     this.utilization = utilization;
   }
+
+  public void changeUtilization(int change) {
+    this.utilization += change;
+  }
 }
