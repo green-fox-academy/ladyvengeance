@@ -73,8 +73,10 @@ public class SpaceServiceImpl implements SpaceService {
   public void movePeopleToPlanet(long shipId, long planetId) {
     Spaceship ship = spaceshipRepository.findById(shipId).get();
     Planet planet = planetRepository.findById(planetId).get();
+    int peopleOnShip = ship.getUtilization();
 
-
+    ship.setUtilization(0);
+    planet.changePopulation(peopleOnShip);
 
     planetRepository.save(planet);
     spaceshipRepository.save(ship);
