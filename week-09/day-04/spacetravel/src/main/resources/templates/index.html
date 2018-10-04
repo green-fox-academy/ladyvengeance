@@ -26,7 +26,8 @@
                         <input type="submit" value="Move here">
                     </form>
                 </td>
-                <td th:text="${ship.utilization}"></td>
+                <td th:if="${ship.planet} == *{name}" th:text="${ship.utilization}"></td>
+                <td th:unless="${ship.planet} == *{name}" th:text="${ship.utilization}">-</td>
             </tr>
         </tbody>
     </table>
