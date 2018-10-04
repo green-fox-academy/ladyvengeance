@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Space Transporter</title>
+</head>
+<body>
+    <h1>Space Transporter</h1>
+    <table>
+        <thead>
+            <th>Planet</th>
+            <th>Population</th>
+            <th>Spaceship location</th>
+            <th>People on ship</th>
+        </thead>
+        <tbody>
+            <tr th:each="planet : ${planets}" th:object="${planet}">
+                <td th:text="*{name}"></td>
+                <td th:text="*{population}"></td>
+                <td th:if="${ship.planet} == *{name}">
+                    <a th:href="@{'/toplanet/' + *{id}}">← to planet</a>
+                    <a th:href="@{'/toship/' + *{id}}">to ship →</a>
+                </td>
+                <td th:unless="${ship.planet} == *{name}">
+                    <form action="#" th:action="@{'/movehere/' + *{id}}" method="post">
+                        <input type="submit" value="Move here">
+                    </form>
+                </td>
+                <td th:text="${ship.utilization}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
